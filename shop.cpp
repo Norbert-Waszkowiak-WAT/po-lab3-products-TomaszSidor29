@@ -1,12 +1,12 @@
 #ifndef SHOP
 #define SHOP
 
-#include<string>
-#include<vector>
-#include"product.cpp"
-#include"food_product.cpp"
-#include"paper_product.cpp"
-#include<iostream>
+#include <string>
+#include <vector>
+#include "product.cpp"
+#include "food_product.cpp"
+#include "paper_product.cpp"
+#include <iostream>
 
 using namespace std;
 
@@ -21,7 +21,7 @@ public:
 
     void sellProduct(string name){
         for(int i = 0; i < products.size(); i++){
-            if(*(products[i])getName() == name){
+            if(products[i]->getName() == name){
                 products.erase(products.begin() + i);
                 return;
             }
@@ -30,7 +30,7 @@ public:
 
     bool checkAvailability(string name){
         for(int i = 0; i < products.size(); i++){
-            if(*(products[i])getName() == name){
+            if(products[i]->getName() == name){
                 return true;
             }
         }
@@ -40,7 +40,7 @@ public:
     string printProductsList(){
         string result = "";
         for(int i = 0; i < products.size(); i++){
-            result += *(products[i])getName() + "\n";
+            result += products[i]->getName() + "\n";
         }
         return result;
     }
@@ -48,8 +48,8 @@ public:
     string printProductsListByType(string type){
         string result = "";
         for(int i = 0; i < products.size(); i++){
-            if(*(products[i])getProductType() == type){
-                result += *(products[i])getName() + "\n";
+            if(products[i]->getProductType() == type){
+                result += products[i]->getName() + "\n";
             }
         }
         return result;

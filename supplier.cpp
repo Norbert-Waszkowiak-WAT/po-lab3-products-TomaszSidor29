@@ -2,12 +2,12 @@
 #define SUPPLIER
 
 #include "shop.cpp"
-#include<string>
-#include<vector>
-#include"product.cpp"
-#include"food_product.cpp"
-#include"paper_product.cpp"
-#include<iostream>
+#include <string>
+#include <vector>
+#include "product.cpp"
+#include "food_product.cpp"
+#include "paper_product.cpp"
+#include <iostream>
 
 using namespace std;
 
@@ -16,10 +16,10 @@ private:
     Shop* shop;
 public:
     Supplier(Shop* shop){
-        *(this).shop = shop;
+        this->shop = shop;
     }
     void deliverProduct(Product* product){
-        *(shop).addToStore(product);
+        shop->addToStore(product);
     }
 
 };
